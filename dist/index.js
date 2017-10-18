@@ -296,6 +296,14 @@ module.exports = function normalizeComponent (
     fullFormat: 'dd.MM.yyyy',
     dayEventsTitle: 'Alle Veranstaltungen',
     notHaveEvents: 'Keine Veranstaltungen'
+  },
+  vi: {
+    dayNames: ["T2", "T3", "T4", "T5", "T6", "T7", "CN"],
+    monthNames: ["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12"],
+    format: 'MM/yyyy',
+    fullFormat: 'dd/MM/yyyy',
+    dayEventsTitle: 'Tất cả sự kiện',
+    notHaveEvents: 'Không có sự kiện nào'
   }
 });
 
@@ -366,6 +374,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -405,9 +419,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tools_js__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cal_event_item_vue__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cal_event_item_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__cal_event_item_vue__);
-//
-//
-//
 //
 //
 //
@@ -692,7 +703,7 @@ var inBrowser = typeof window !== 'undefined';
         return {
           options: {
             locale: 'en', //zh
-            color: ' #f29543'
+            color: ' #ffff'
           },
           params: {
             curYear: dateObj.getFullYear(),
@@ -793,7 +804,7 @@ function install(Vue) {
   var dateObj = new Date();
   var DEFAULT_OPTION = {
     locale: 'zh', // en
-    color: ' #f29543',
+    color: ' #ffff',
     className: 'selected-day',
     weekStartOn: 0 // 0 mean sunday
   };
@@ -943,11 +954,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "wrapper"
   }, [_c('h3', {
     staticClass: "title"
-  }, [_vm._v(_vm._s(_vm.index + 1) + ". " + _vm._s(_vm.event.title))]), _vm._v(" "), _c('p', {
-    staticClass: "time"
-  }, [_vm._v(_vm._s(_vm.dateTimeFormatter(Date.parse(new Date(_vm.event.date)), _vm.i18n[_vm.locale].fullFormat)))]), _vm._v(" "), _c('p', {
+  }, [_vm._v(_vm._s(_vm.event.title))]), _vm._v(" "), _c('div', {
+    attrs: {
+      "id": "event-item-wrapper"
+    }
+  }, [_c('div', {
+    staticClass: "desc-wrapper"
+  }, [_c('p', {
     staticClass: "desc"
-  }, [_vm._v(_vm._s(_vm.event.desc))])])
+  }, [_vm._v(_vm._s(_vm.event.desc))])]), _vm._v(" "), _c('div', {
+    staticClass: "time-wrapper"
+  }, [_c('p', {
+    staticClass: "time"
+  }, [_vm._v(_vm._s(_vm.dateTimeFormatter(Date.parse(new Date(_vm.event.date)), _vm.i18n[_vm.locale].fullFormat)))])])])])
 },staticRenderFns: []}
 
 /***/ }),
@@ -958,9 +977,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "events-wrapper",
     style: (_vm.bgColor)
-  }, [_c('h2', {
-    staticClass: "date"
-  }, [_vm._v("\n    " + _vm._s(_vm.dayEventsTitle) + "\n  ")]), _vm._v(" "), _c('div', {
+  }, [_c('div', {
     staticClass: "cal-events"
   }, [_vm._t("default", _vm._l((_vm.events), function(event, index) {
     return _c('div', {

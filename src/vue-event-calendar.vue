@@ -62,7 +62,7 @@ export default {
         return {
           options: {
             locale: 'en', //zh
-            color: ' #f29543'
+            color: ' #ffff'
           },
           params: {
               curYear: dateObj.getFullYear(),
@@ -139,7 +139,7 @@ export default {
 }
 </script>
 <style lang="less">
-@base-orange: #f29543;
+
 @white: #ffffff;
 @gray: #e0e0e0;
 @gray-dark: #b1b1b1;
@@ -153,16 +153,16 @@ export default {
     margin: 0 auto;
     .cal-wrapper{
       width: 50%;
-      padding: 100px 50px;
+      padding: 0px 0px;
       .date-num{
         line-height: 50px;
       }
     }
     .events-wrapper{
       width: 50%;
-      background-color: @base-orange;
+      background-color: @white;
       color: @white;
-      padding: 40px 45px;
+      padding: 0px 0px;
       position: absolute;
       left: 50%;
       top: 0;
@@ -273,12 +273,12 @@ export default {
           }
           &.selected-day{
             .is-event{
-              background-color: @base-orange;
+              background-color: @white;
             }
           }
           .is-event{
             content: '';
-            border: 1px solid @base-orange;
+            border: 1px solid @white;
             background-color: #fff;
             border-radius: 50%;
             width: 36px;
@@ -292,7 +292,7 @@ export default {
           }
           .is-today{
             content: '';
-            background-color: @base-orange;
+            background-color: @white;
             border-radius: 50%;
             opacity: .8;
             width: 12px;
@@ -329,29 +329,29 @@ export default {
     .event-item{
       padding: 5px 20px;
       margin-top: 15px;
-      box-shadow: 0 3px 11px 2px rgba(0,0,0,.1);
       background-color: #fff;
-      border-radius: 5px;
       color: #323232;
       position: relative;
       &:first-child{
         margin-top: 0;
+      }
+      #event-item-wrapper {
+        display: flex;
+        justify-content: space-between;
       }
       .title{
         height: 40px;
         line-height: 40px;
         color: #323232;
         font-size: 16px;
-        border-bottom: 1px solid #f2f2f2;
       }
       .time{
-        position: absolute;
-        right: 30px;
-        top: 17px;
+        display: inline-block;
         color: #9b9b9b;
         font-size: 14px;
       }
       .desc{
+        display: inline-block;
         color: #9b9b9b;
         font-size: 14px;
         padding: 7px 0;

@@ -1,8 +1,5 @@
 <template>
   <div class="events-wrapper" :style="bgColor">
-    <h2 class="date">
-      {{dayEventsTitle}}
-    </h2>
     <div class="cal-events">
       <slot>
         <div v-for="(event, index) in events" class="event-item">
