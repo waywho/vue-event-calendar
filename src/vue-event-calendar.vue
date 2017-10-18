@@ -139,9 +139,9 @@ export default {
 }
 </script>
 <style lang="less">
-
+@darkred: #73020d;
 @white: #ffffff;
-@gray: #e0e0e0;
+@gray: #dddcdc;
 @gray-dark: #b1b1b1;
 @large-padding: 15px;
 @small-padding: 10px;
@@ -155,7 +155,7 @@ export default {
       width: 50%;
       padding: 0px 0px;
       .date-num{
-        line-height: 50px;
+        line-height: 35px;
       }
     }
     .events-wrapper{
@@ -264,12 +264,21 @@ export default {
           cursor: default;
           -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
           .date-num{
+            background-color: @gray;
+            color: #fff !important;
+            margin: 7px;
             font-size: 1rem;
             position: relative;
             z-index: 3;
           }
           &.event{
             cursor: pointer;
+            background-color: @darkred;
+
+          }
+          &.event .date-num{
+            background-color: @darkred;
+            font-size: 1.5rem;
           }
           &.selected-day{
             .is-event{
@@ -278,9 +287,7 @@ export default {
           }
           .is-event{
             content: '';
-            border: 1px solid @white;
             background-color: #fff;
-            border-radius: 50%;
             width: 36px;
             height: 36px;
             position: absolute;
