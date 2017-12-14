@@ -571,11 +571,29 @@ var inBrowser = typeof window !== 'undefined';
       var startDate = new Date(firstDay);
       startDate.setDate(firstDay.getDate() - dayOfWeek);
 
+      var dayNums = 0;
+      console.log("day of week");
+      console.log(dayOfWeek);
+
+      if (this.calendar.options.weekStartOn === 0) {
+        if (dayOfWeek >= 5) {
+          dayNums = 42;
+        } else {
+          dayNums = 35;
+        }
+      } else {
+        if (dayOfWeek > 5) {
+          dayNums = 42;
+        } else {
+          dayNums = 35;
+        }
+      }
+
       var item = void 0,
           status = void 0,
           tempArr = [],
           tempItem = void 0;
-      for (var i = 0; i < 42; i++) {
+      for (var i = 0; i < dayNums; i++) {
         item = new Date(startDate);
         item.setDate(startDate.getDate() + i);
 
@@ -803,7 +821,7 @@ function install(Vue) {
   var inBrowser = typeof window !== 'undefined';
   var dateObj = new Date();
   var DEFAULT_OPTION = {
-    locale: 'zh', // en
+    locale: 'en', // en
     color: ' #ffff',
     className: 'selected-day',
     weekStartOn: 0 // 0 mean sunday

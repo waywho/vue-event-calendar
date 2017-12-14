@@ -73,8 +73,28 @@ export default {
         let startDate = new Date(firstDay)
         startDate.setDate(firstDay.getDate() - dayOfWeek)
 
+        let dayNums = 0
+        console.log("day of week")
+        console.log(dayOfWeek)
+
+        if (this.calendar.options.weekStartOn === 0) {
+          if (dayOfWeek >= 5) {
+            dayNums = 42
+           } else {
+            dayNums = 35
+          }
+        } else {
+          if (dayOfWeek > 5 ) {
+            dayNums = 42
+          } else {
+            dayNums = 35
+          }
+        }
+
+        
+
         let item, status, tempArr = [], tempItem
-        for (let i = 0 ; i < 42 ; i++) {
+        for (let i = 0 ; i < dayNums ; i++) {
             item = new Date(startDate);
             item.setDate(startDate.getDate() + i);
 
