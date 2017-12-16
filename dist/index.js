@@ -572,17 +572,27 @@ var inBrowser = typeof window !== 'undefined';
       startDate.setDate(firstDay.getDate() - dayOfWeek);
 
       var dayNums = 0;
-      console.log("day of week");
+      var mon = this.calendar.params.curMonth + 1;
+      var numberDays = new Date(this.calendar.params.curYear, mon, 0).getDate();
+
+      console.log("current month");
+      console.log(this.calendar.params.curMonth);
+      console.log("number of days");
+      console.log(numberDays);
       console.log(dayOfWeek);
 
       if (this.calendar.options.weekStartOn === 0) {
-        if (dayOfWeek >= 5) {
+        if (dayOfWeek === 5 && numberDays > 30) {
+          dayNums = 42;
+        } else if (dayOfWeek === 6 && numberDays > 29) {
           dayNums = 42;
         } else {
           dayNums = 35;
         }
       } else {
-        if (dayOfWeek > 5) {
+        if (dayOfWeek === 5 && numberDays > 29) {
+          dayNums = 42;
+        } else if (dayOfWeek > 5 && numberDays > 28) {
           dayNums = 42;
         } else {
           dayNums = 35;
@@ -971,7 +981,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "wrapper"
   }, [_c('h3', {
-    staticClass: "title"
+    staticClass: "title strong"
   }, [_vm._v(_vm._s(_vm.event.title))]), _vm._v(" "), _c('div', {
     attrs: {
       "id": "event-item-wrapper"

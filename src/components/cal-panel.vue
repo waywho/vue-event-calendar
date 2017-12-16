@@ -74,24 +74,32 @@ export default {
         startDate.setDate(firstDay.getDate() - dayOfWeek)
 
         let dayNums = 0
-        console.log("day of week")
+        let mon = this.calendar.params.curMonth + 1
+        let numberDays = new Date(this.calendar.params.curYear, mon, 0).getDate();
+
+        console.log("current month")
+        console.log(this.calendar.params.curMonth)
+        console.log("number of days")
+        console.log(numberDays)
         console.log(dayOfWeek)
 
         if (this.calendar.options.weekStartOn === 0) {
-          if (dayOfWeek >= 5) {
+          if (dayOfWeek === 5 && numberDays > 30 ) {
+            dayNums = 42
+           } else if (dayOfWeek === 6 && numberDays > 29) {
             dayNums = 42
            } else {
             dayNums = 35
-          }
+           }
         } else {
-          if (dayOfWeek > 5 ) {
+          if (dayOfWeek === 5 && numberDays > 29) {
+            dayNums = 42
+          } else if (dayOfWeek > 5 && numberDays > 28) {
             dayNums = 42
           } else {
             dayNums = 35
           }
         }
-
-        
 
         let item, status, tempArr = [], tempItem
         for (let i = 0 ; i < dayNums ; i++) {

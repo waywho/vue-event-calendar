@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <h3 class="title">{{event.title}}</h3>
+    <h3 class="title strong">{{event.title}}</h3>
     <div id="event-item-wrapper">
       <div class="desc-wrapper">
         <p class="desc">{{event.desc}}</p>

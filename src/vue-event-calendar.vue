@@ -273,14 +273,29 @@ export default {
           }
           &.event{
             cursor: pointer;
-            background-color: @darkred;
+            background-color: #fff;
 
           }
           &.event .date-num{
             background-color: @darkred;
+            font-size: 1rem;
+          }
+          &.event:hover {
+            background-color: #cd9d2b;
+          }
+          &.event:hover .date-num{
+            background-color: #cd9d2b;
             font-size: 1.5rem;
           }
           &.selected-day{
+            background-color: #cd9d2b;
+            &.event .date-num {
+              background-color: #cd9d2b;
+              font-size: 1.5rem;
+            }
+            &.event:hover .date-num {
+              font-size: 2rem;
+            }
             .is-event{
               background-color: @white;
             }
@@ -288,8 +303,8 @@ export default {
           .is-event{
             content: '';
             background-color: #fff;
-            width: 36px;
-            height: 36px;
+            width: 0px; //remove lines on top of date
+            height: 0px;
             position: absolute;
             left: 50%;
             top: 50%;
@@ -351,6 +366,7 @@ export default {
         line-height: 40px;
         color: #323232;
         font-size: 16px;
+        font-weight: 500;
       }
       .time{
         display: inline-block;
@@ -363,6 +379,19 @@ export default {
         font-size: 14px;
         padding: 7px 0;
       }
+    }
+  }
+  .event-item:hover{
+    background-color: #ecddba;
+    color: #fff;
+    .title{
+      color: #fff;
+    }
+    .time{
+      color: #fff;
+    }
+    .desc{
+      color: #fff;
     }
   }
   .arrow-left.icon {
