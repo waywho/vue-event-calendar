@@ -285,16 +285,16 @@ export default {
           }
           &.event:hover .date-num{
             background-color: #cd9d2b;
-            font-size: 1.5rem;
+            font-size: 18px;
           }
           &.selected-day{
             background-color: #cd9d2b;
             &.event .date-num {
               background-color: #cd9d2b;
-              font-size: 1.5rem;
+              font-size: 18px;
             }
             &.event:hover .date-num {
-              font-size: 2rem;
+              font-size: 20px;
             }
             .is-event{
               background-color: @white;
