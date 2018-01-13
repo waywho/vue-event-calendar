@@ -575,11 +575,11 @@ var inBrowser = typeof window !== 'undefined';
       var mon = this.calendar.params.curMonth + 1;
       var numberDays = new Date(this.calendar.params.curYear, mon, 0).getDate();
 
-      console.log("current month");
-      console.log(this.calendar.params.curMonth);
-      console.log("number of days");
-      console.log(numberDays);
-      console.log(dayOfWeek);
+      // console.log("current month")
+      // console.log(this.calendar.params.curMonth)
+      // console.log("number of days")
+      // console.log(numberDays)
+      // console.log(dayOfWeek)
 
       if (this.calendar.options.weekStartOn === 0) {
         if (dayOfWeek === 5 && numberDays > 30) {
