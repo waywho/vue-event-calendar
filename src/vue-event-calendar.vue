@@ -375,6 +375,7 @@ export default {
       #event-item-wrapper {
         display: flex;
         justify-content: space-between;
+        align-items: center;
       }
       .title{
         height: 40px;
