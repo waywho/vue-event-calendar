@@ -3,7 +3,7 @@
     <div class="cal-events">
       <slot>
         <div v-for="(event, index) in events" class="event-item">
-          <cal-event-item :event="event" :index="index" :locale="locale"></cal-event-item>
+          <div class="dot"></div> <cal-event-item :event="event" :index="index" :locale="locale"></cal-event-item>
         </div>
       </slot>
     </div>

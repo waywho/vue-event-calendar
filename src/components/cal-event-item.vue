@@ -1,14 +1,17 @@
 <template>
   <div class="wrapper">
-    <h3 class="title strong">{{event.title}}</h3>
+    
     <div id="event-item-wrapper">
-      <div class="desc-wrapper">
-        <p class="desc">{{event.desc}}</p>
-      </div>
+      <h3 class="title strong">{{event.title}}</h3>
       <div class="time-wrapper">
         <p class="time">{{dateTimeFormatter(Date.parse(new Date(event.date)),i18n[locale].fullFormat)}}</p>
+      </div>
     </div>
-    </div>
+    
+      <div class="desc-wrapper">
+        <p class="desc">{{event.desc}}</p>
+      </div> 
+
   </div>
 </template>
 <script>

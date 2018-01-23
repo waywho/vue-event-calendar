@@ -147,6 +147,15 @@ export default {
 @small-padding: 10px;
 
 @icon-border-size: 1px;
+
+.dot {
+  background-color: #f7931e;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
 @media screen and (min-width: 768px) {
   .__vev_calendar-wrapper{
     max-width: 1200px;
@@ -349,6 +358,9 @@ export default {
       font-size: 22px;
     }
     .event-item{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       padding: 5px 20px;
       margin-top: 15px;
       background-color: #fff;
@@ -356,6 +368,9 @@ export default {
       position: relative;
       &:first-child{
         margin-top: 0;
+      }
+      .wrapper {
+        flex-grow: 2;
       }
       #event-item-wrapper {
         display: flex;

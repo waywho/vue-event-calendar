@@ -380,6 +380,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 
 
@@ -980,21 +983,21 @@ module.exports = Component.exports
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "wrapper"
-  }, [_c('h3', {
-    staticClass: "title strong"
-  }, [_vm._v(_vm._s(_vm.event.title))]), _vm._v(" "), _c('div', {
+  }, [_c('div', {
     attrs: {
       "id": "event-item-wrapper"
     }
-  }, [_c('div', {
-    staticClass: "desc-wrapper"
-  }, [_c('p', {
-    staticClass: "desc"
-  }, [_vm._v(_vm._s(_vm.event.desc))])]), _vm._v(" "), _c('div', {
+  }, [_c('h3', {
+    staticClass: "title strong"
+  }, [_vm._v(_vm._s(_vm.event.title))]), _vm._v(" "), _c('div', {
     staticClass: "time-wrapper"
   }, [_c('p', {
     staticClass: "time"
-  }, [_vm._v(_vm._s(_vm.dateTimeFormatter(Date.parse(new Date(_vm.event.date)), _vm.i18n[_vm.locale].fullFormat)))])])])])
+  }, [_vm._v(_vm._s(_vm.dateTimeFormatter(Date.parse(new Date(_vm.event.date)), _vm.i18n[_vm.locale].fullFormat)))])])]), _vm._v(" "), _c('div', {
+    staticClass: "desc-wrapper"
+  }, [_c('p', {
+    staticClass: "desc"
+  }, [_vm._v(_vm._s(_vm.event.desc))])])])
 },staticRenderFns: []}
 
 /***/ }),
@@ -1010,7 +1013,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._t("default", _vm._l((_vm.events), function(event, index) {
     return _c('div', {
       staticClass: "event-item"
-    }, [_c('cal-event-item', {
+    }, [_c('div', {
+      staticClass: "dot"
+    }), _vm._v(" "), _c('cal-event-item', {
       attrs: {
         "event": event,
         "index": index,
